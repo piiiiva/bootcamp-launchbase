@@ -38,7 +38,7 @@ header {
 }
 
 .links a:hover {
-    color: --;
+    color: var(--color-blue);
     transition: color 700ms;
 }
 
