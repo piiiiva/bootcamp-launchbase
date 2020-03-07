@@ -167,7 +167,7 @@ iframe {
     top: 5%;
 }
 
-/* === CONTENT CSS=== */
+/* === CONTENTPAGE CSS=== */
 
 .cards-contentPage {
     max-width: 1200px;
@@ -206,14 +206,48 @@ iframe {
     height: 100%;
     position: fixed;
     top: 0;
-    opacity: 1;
-    visibility: ;
+    opacity: 0;
+    visibility: hidden;
 } 
 
 .contentPage-modal {
     background-color: white;
     width: 90%;
     height: 90%;
-    margin: 5vh auto;
+    margin: 5vh auto; /* é o que faz o iframe ficar centralizado */
     position: relative;
+    
 }
+
+.contentPage-modal .close-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
+    color: black;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    
+}
+
+.contentPage-modal .maximize-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
+    color: black;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    cursor: pointer;
+    
+}
+
+i {
+    margin-right: 4px;
+}
+
+/* === MODAL CONTENTPAGE ATIVO === */
+
+.contentPage-modal-overlay.active { /* só quando tiver essas duas classes juntas serao aplicados esses atributos */
+    opacity: 1;
+    visibility: visible;
+}
+

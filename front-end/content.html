@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        
+
         <div class="card-contentPage">
             <div class="card__image-contentPage">
                 <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="">
@@ -62,7 +62,17 @@
 
     <div class="contentPage-modal-overlay">
         <div class="contentPage-modal">
-            <iframe src="https://rocketseat.com.br/launchbase" frameborder="0"></iframe>
+            <a class="close-modal-contentPage"> <!-- preciso colocar em uma div acho pq eu to chmando o close-modal-contentPage lá na funcao para fechar o modal
+            aí o maximize acaba pegando a funcao de fechar tbm-->
+                <i class="material-icons" class="close-contentPage">close</i>
+            </a>
+            <a class="maximize-modal-contentPage">
+                <i class="material-icons" class="maximize">maximize</i>
+            </a>
+
+            <div class="contentPage-modal-content">
+                <iframe src="https://rocketseat.com.br/launchbase" frameborder="0"></iframe>
+            </div>
         </div>
 
     </div>

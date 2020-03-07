@@ -14,8 +14,25 @@ for (let card of cards) {
     })
 }
 
-document.querySelector(".close-modal").addEventListener("click", function() {
-    modalOverlay.classList.remove("active") // precviso remover a funçao do evento anterior para voltar ao normal a página. Se nao fizer isso a <div class= "modal-overlay"> vai continuar com a class = "active" e manter as propriedades definidas no css, opacidade 1 no caso 
-    modalOverlay.querySelector("iframe").src = "" // se nao fizer isso o veio vai continuar rodando mesmo depoios de fechar a janela
-})
+if (document.querySelector(".close-modal") != null) {
+    document.querySelector(".close-modal").addEventListener("click", function() {
+        modalOverlay.classList.remove("active") // preciso remover a funçao do evento anterior para voltar ao normal a página. Se nao fizer isso a <div class= "modal-overlay"> vai continuar com a class = "active" e manter as propriedades definidas no css, opacidade 1 no caso 
+        modalOverlay.querySelector("iframe").src = "" // se nao fizer isso o veio vai continuar rodando mesmo depoios de fechar a janela
+    })
+}
 
+
+/* CONTENTPAGE*/
+const modalOverlayContentPage = document.querySelector('.contentPage-modal-overlay');
+const cardsContentPage = document.querySelectorAll('.card-contentPage');
+
+for (let cardContentPage of cardsContentPage) {
+    cardContentPage.addEventListener("click", function(){
+        modalOverlayContentPage.classList.add('active')
+
+    })
+}
+
+modalOverlayContentPage.querySelector('.close-modal-contentPage').addEventListener("click", function(){
+    modalOverlayContentPage.classList.remove('active')
+})
