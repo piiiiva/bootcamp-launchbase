@@ -26,13 +26,36 @@ if (document.querySelector(".close-modal") != null) {
 const modalOverlayContentPage = document.querySelector('.contentPage-modal-overlay');
 const cardsContentPage = document.querySelectorAll('.card-contentPage');
 
+
 for (let cardContentPage of cardsContentPage) {
     cardContentPage.addEventListener("click", function(){
         modalOverlayContentPage.classList.add('active')
+        
+        const courseId = cardContentPage.getAttribute("id")
+        modalOverlayContentPage.querySelector("iframe").src = `https://rocketseat.com.br/${courseId}`
 
     })
+    
 }
 
 modalOverlayContentPage.querySelector('.close-modal-contentPage').addEventListener("click", function(){
     modalOverlayContentPage.classList.remove('active')
+    modalContentPage.classList.remove("maximized")
+    modalOverlayContentPage.querySelector("iframe").src = "" // faz isso para que quando feche nao fique rodando alguma mídia mesmo depois de fechar
+    
 })
+
+const modalContentPage = document.querySelector(".contentPage-modal")
+const maximizeModalContentPage = document.querySelector(".maximize-modal-contentPage")
+
+
+maximizeModalContentPage.addEventListener("click", function(){
+    if (modalContentPage.classList.contains("maximized")) {
+        modalContentPage.classList.remove("maximized")
+    } else {
+        modalContentPage.classList.add("maximized")
+    } 
+})
+
+
+//https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg

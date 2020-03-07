@@ -218,8 +218,7 @@ iframe {
     position: relative;
     
 }
-
-.contentPage-modal .close-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
+.contentPage-modal .maximize-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
     color: black;
     position: absolute;
     right: 4px;
@@ -231,14 +230,14 @@ iframe {
     
 }
 
-.contentPage-modal .maximize-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
+.contentPage-modal .close-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
     color: black;
     position: absolute;
     right: 4px;
     top: 8px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
+
 
 i {
     margin-right: 4px;
@@ -251,3 +250,8 @@ i {
     visibility: visible;
 }
 
+.contentPage-modal.maximized {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}

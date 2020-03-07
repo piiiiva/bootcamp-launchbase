@@ -12,9 +12,9 @@
 <body>
     <header>
         <div class="links">
-            <a href="/">Sobre</a>
-            <a href="/">Aulas</a>
-            <a href="/">Conteúdo</a>
+            <a href="index.html">Sobre</a>
+            <a href="classes.html">Aulas</a>
+            <a href="content.html">Conteúdo</a>
 
         </div>
 
@@ -26,7 +26,7 @@
 
     <section class="cards-contentPage">
 
-        <div class="card-contentPage">
+        <div class="card-contentPage" id="launchbase">
             <div class="card__image-contentPage">
                 <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="">
             </div>
@@ -37,7 +37,7 @@
 
         </div>
 
-        <div class="card-contentPage">
+        <div class="card-contentPage" id="starter">
             <div class="card__image-contentPage">
                 <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="">
             </div>
@@ -48,7 +48,7 @@
         </div>
 
 
-        <div class="card-contentPage">
+        <div class="card-contentPage" id="gostack">
             <div class="card__image-contentPage">
                 <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="">
             </div>
@@ -62,12 +62,12 @@
 
     <div class="contentPage-modal-overlay">
         <div class="contentPage-modal">
+            <a class="maximize-modal-contentPage">
+                <i class="material-icons">maximize</i>
+            </a>
             <a class="close-modal-contentPage"> <!-- preciso colocar em uma div acho pq eu to chmando o close-modal-contentPage lá na funcao para fechar o modal
             aí o maximize acaba pegando a funcao de fechar tbm-->
-                <i class="material-icons" class="close-contentPage">close</i>
-            </a>
-            <a class="maximize-modal-contentPage">
-                <i class="material-icons" class="maximize">maximize</i>
+                <i class="material-icons">close</i>
             </a>
 
             <div class="contentPage-modal-content">
