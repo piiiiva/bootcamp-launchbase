@@ -57,5 +57,3 @@ maximizeModalContentPage.addEventListener("click", function(){
     } 
 })
 
-
-//https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg
