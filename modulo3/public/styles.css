@@ -1,0 +1,257 @@
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap";
+
+:root {
+    --color-blue: #537bfd;
+    --color-rocket: #7159c1;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: #282a36;
+    font-family: 'Source Sans Pro', sans-serif ;
+    color: white;
+}
+
+header {
+    padding: 32px;
+    border-bottom: 1px solid #333;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.links
+ {
+    text-align: center;
+}
+
+.links a {
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0px 16px;
+    text-decoration: none;
+    
+}
+
+.links a:hover {
+    color: var(--color-blue);
+    transition: color 700ms;
+}
+
+#wrapper {
+    text-align: center;
+    padding: 32px;
+}
+
+#wrapper img {
+    border-radius: 50%;
+    border: solid 5px var(--color-blue);
+    margin-bottom: 32px;
+    height: 300px;
+}
+
+#wrapper h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: bold;
+}
+
+#wrapper h2 {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: bold;
+    margin-top: 8px;
+    opacity: 0.5;
+}
+
+#wrapper p {
+    max-width: 500px;
+    margin: 32px auto;
+    font-size: 24px;
+    line-height: 34px;
+}
+#wrapper p a {
+    color: var(--color-blue);
+}
+
+#links-footer a {
+    border-bottom: 1px solid var(--color-blue);
+}
+
+/* ==== CARDS - CLASSPAGE==== */
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color:var(--color-rocket);
+}
+
+.card__image-container img {
+    width: 100%;
+}
+
+.card__content,
+.card__info   {
+    padding: 24px;
+}
+
+.card__info {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.card__price {
+    background-color: var(--color-rocket);
+    filter:brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* === MODAL === Sobreposiçao de conteúdo HTML com CSS, cria uma tela de fundo escurecida na vdd é uma div que sobrepoe a tela*/
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto; /* viewport hate - visao do meu dispositivo, visao da altura. 
+    Padrao é sempre 100. adapta a visao da tela conforme tamanho*/
+    position: relative;
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute; /* preciso aplocar o position: relative no .modal antes se nao quando usar o
+    right: 0 ele vai considerar a tela interira e fica fora do meu modal, que tem width 90%. Colocando 
+    position: relative no .modal, que é o pai, quando aplicar o position: absolute no filho ele vai ter
+    permissão para se posicionar em qualquer lugar da tela dentro do .modal */
+    right: 8px;
+    top: 8px;
+    cursor: pointer; /* faz virar a maozinha quando passa o mouse em cima*/
+    
+}
+
+/* === MODAL ATIVO=== */
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 90%; /* não coloco 100% pq vai ficar em cima do meu botao */
+    position: absolute; /* colocar pq as vezes ele nao respeita, pq o pai ou o filho estao sobrepondo, nesse caso vai preencher toda a tela do modal pq eu defini 100% ou qualquer % */
+    top: 5%;
+}
+
+/* === CONTENTPAGE CSS=== */
+
+.cards-contentPage {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.card-contentPage {
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 10%;
+}
+
+.card-contentPage, .card__contentPage__info {
+    padding: 24px;
+}
+
+.card__contentPage__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+.card__contentPage__price {
+    background-color: var(--color-blue);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* === MODAL CONTENTPAGE === */
+.contentPage-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.212);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+} 
+
+.contentPage-modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto; /* é o que faz o iframe ficar centralizado */
+    position: relative;
+    
+}
+.contentPage-modal .maximize-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
+    color: black;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    
+}
+
+.contentPage-modal .close-modal-contentPage { /* só o close-modal-content filho de .contentPage-modal receberá esses atributos */
+    color: black;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    cursor: pointer;    
+}
+
+
+i {
+    margin-right: 4px;
+}
+
+/* === MODAL CONTENTPAGE ATIVO === */
+
+.contentPage-modal-overlay.active { /* só quando tiver essas duas classes juntas serao aplicados esses atributos */
+    opacity: 1;
+    visibility: visible;
+}
+
+.contentPage-modal.maximized {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}

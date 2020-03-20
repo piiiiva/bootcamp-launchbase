@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS starter</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="links">
+            <a href="index.html">Sobre</a>
+            <a href="classes.html">Aulas</a>
+            <a href="content.html">Conteúdo</a>
+
+        </div>
+
+    </header>
+
+    <div id="wrapper">
+        <h1>Cursos Disponíveis</h1>
+    </div>
+
+    <section class="cards-contentPage">
+
+        <div class="card-contentPage" id="launchbase">
+            <div class="card__image-contentPage">
+                <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="">
+            </div>
+            <div class="card__contentPage__info">
+                <p>Módulos: 10</p>
+                <p class="card__contentPage__price">R$ 900,00</p>
+            </div>
+
+        </div>
+
+        <div class="card-contentPage" id="starter">
+            <div class="card__image-contentPage">
+                <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="">
+            </div>
+            <div class="card__contentPage__info">
+                <p>Módulos: 10</p>
+                <p class="card__contentPage__price">Free</p>
+            </div>
+        </div>
+
+
+        <div class="card-contentPage" id="gostack">
+            <div class="card__image-contentPage">
+                <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="">
+            </div>
+            <div class="card__contentPage__info">
+                <p>Módulos: 10</p>
+                <p class="card__contentPage__price">R$ 2.000,00</p>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="contentPage-modal-overlay">
+        <div class="contentPage-modal">
+            <a class="maximize-modal-contentPage">
+                <i class="material-icons">maximize</i>
+            </a>
+            <a class="close-modal-contentPage"> <!-- preciso colocar em uma div acho pq eu to chmando o close-modal-contentPage lá na funcao para fechar o modal
+            aí o maximize acaba pegando a funcao de fechar tbm-->
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="contentPage-modal-content">
+                <iframe src="https://rocketseat.com.br/launchbase" frameborder="0"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="scripts.js">
+
+    </script>
+
+</body>
+
+</html>
