@@ -15,7 +15,7 @@ nunjucks.configure("views", { //6
 //4 
 // "/" é a minha rota principal
 server.get("/", function (req, res){ // assim que der certo o .get, executa a funçao req, que é a requisiçao ( o servidor ouvindo o usuario enviar algo) e res, responde algo. O servidor sempre ouve e responde algo req e res
-    return res.render("index") // vai renderizar o meu site
+    return res.render("about") // vai renderizar o meu site
 })
 
 server.get("/portfolio", function (req, res) { //dentro da rota principal procura o /portfolio e o retorno vai ser renderizar a página
