@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block head %}
+            <title>Titulo Padrão</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/about">Sobre</a>
+                <a href="/">Aulas</a>
+                <a href="/">Conteúdo</a>
+
+            </div>
+        </header>
+
+        {%block content%}
+        {%endblock%}
+            
+        <div id="links-footer" class="links">
+                <a href="https://github.com/piiiiva" target="blank">Github</a>
+                <a href="https://www.linkedin.com/in/rodrigo-piva-10772827/" target="blank">Linkedin</a>
+                <a href="https://twitter.com/piiiiva" target="blank">Twitter</a>
+                <a href="https://www.instagram.com/piiiiva/" target="blank">Instagram</a>
+        </div>
+
+        </body>
+
+    </html>

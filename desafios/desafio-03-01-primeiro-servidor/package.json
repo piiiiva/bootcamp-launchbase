@@ -2,7 +2,7 @@
   "name": "desafio-03-01-primeiro-servidor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
