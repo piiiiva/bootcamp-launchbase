@@ -1,8 +1,14 @@
 {%extends "layout.njk"%}
     
+    {% block head %}
+    <title>Oooops!</title>
+{% endblock %}
+
     {%block content%}
-    <h1>Página não encontrada!</h1>
-    <h2>O endereço digitado nao pode ser executado, verifique o seu endereço ou click <a href="/">AQUI</a> para retornar à página principal.</h2>
+    <div class="not-found">
+        <h1>Página não encontrada!</h1>
+        <h2>O endereço digitado não pode ser executado, verifique o endereço digitado ou click <a href="/">AQUI</a> para retornar à página principal.</h2>
+    </div>
     {%endblock%}
 
     

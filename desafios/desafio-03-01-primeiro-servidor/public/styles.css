@@ -255,3 +255,31 @@ i {
     height: 100%;
     margin: 0;
 }
+
+.not-found {
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.not-found h1 {
+    margin-bottom: 20px;
+    font-size:38px;
+    line-height: 48px;
+}
+
+.not-found h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.not-found h2 a {
+    text-decoration: underline;
+    color: var(--color-blue);
+
+}
+
+.not-found h2 a:hover {
+    opacity: 0.5;
+    transition: all 700ms;
+}
