@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
-<title>Portfolio - Rdorigo Piva</title>
+<title>Portfolio - Rodrigo Piva</title>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -17,140 +17,27 @@
     <section class="cards">
 
 
-        <div class="card" id="2alg7MQ6_sI">
+        {% for item in items %}
+        
+        <div class="card" id="{{item.id}}">
             <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/2alg7MQ6_sI/maxresdefault.jpg" alt="">
+                <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
             </div>
             <div class="card__content">
-                <p>Git e Github na prática! | Mayk Brito</p>
+                <p>{{item.title}}</p>
 
             </div>
             <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
             </div>
 
         </div>
 
-        <div class="card" id="erInHkjxkL8">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/erInHkjxkL8/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Padronização dos commits | Diego Fernandes</p>
+        {% endfor %}
+        
 
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
 
-        </div>
-
-        <div class="card" id="mcd7lqpUzIA">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/mcd7lqpUzIA/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Contribuições no Github! | Diego Fernandes</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
-
-        <div class="card" id="GykTLqODQuU">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Formulário Animado com JS e CSS | Mayk Brito</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
-
-        <div class="card" id="HN1UjzRSdBk">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/HN1UjzRSdBk/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Desvendando o CSS grid na prática | Mayk Brito</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
-
-        <div class="card" id="GSqR2i-Pq6o">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/GSqR2i-Pq6o/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Desvendando a variável this | Mayk Brito</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
-
-        <div class="card" id="bVAhNaxBEjM">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/bVAhNaxBEjM/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Debug de aplicações Node.js com VSCode | Diego Fernandes</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
-
-        <div class="card" id="pW8GKJtHSk8">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/pW8GKJtHSk8/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Pré Processador SASS | Cleiton Souza</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
-
-        <div class="card" id="vqrjFnq3-uo">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/vqrjFnq3-uo/maxresdefault.jpg" alt="">
-            </div>
-            <div class="card__content">
-                <p>Criando Player de Áudio com Javascript | Diego Fernandes</p>
-
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-
-        </div>
 
     </section>
 
