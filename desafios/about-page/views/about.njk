@@ -1,17 +1,25 @@
 {%extends "layout.njk"%}
 
 {% block head %}
-    <title>Rodrigo Piva WebDev</title>
+    <title>{{about.name}} WebDev</title>
 {% endblock %}
 
 
 {%block content%}
     <div id="wrapper">
-        <img src="profilepiva.jpeg" alt="">
-        <h1>Rodrigo Piva</h1>
-        <h2>Jr Web Developer</h2>
-        <p>In love with web developer world! A <a href="https://skylab.rocketseat.com.br/dashboard"
-                target="blank">Rocketseat</a> student, full-stack developer, focused on learn and help you to find a
-            way!</p>
+        <img src="{{about.avatar}}" alt="">
+        <h1>{{about.name}}</h1>
+        <h2>{{about.role}}</h2>
+        <p>{{about.description}}</p>
     </div>
+
+    <div id="links-footer" class="links">
+
+        {% for socialMedia in about.socialMedias %}
+            <a href="{{socialMedia.url}}" target="blank">{{socialMedia.name}}</a>
+        {% endfor %}
+
+    </div>
+
+
 {%endblock%}
