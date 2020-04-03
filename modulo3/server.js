@@ -31,9 +31,8 @@ server.get("/", function (req, res){ // assim que der certo o .get, executa a fu
         ]
 
     }
-    
-    
-    return res.render("about", { about }) // vai renderizar o meu site
+        
+    return res.render("about", { about })
 })
 
 
