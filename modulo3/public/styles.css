@@ -95,6 +95,7 @@ header {
 
 .card {
     background-color:var(--color-rocket);
+    cursor: pointer;
 }
 
 .card__image-container img {
@@ -254,4 +255,39 @@ i {
     width: 100%;
     height: 100%;
     margin: 0;
+}
+
+/* === FEATURED === */
+
+.featured-wrapper.card__image-container {
+    position: relative;
+}
+
+.featured {
+    background: #f7f756;
+    color: #111;
+    padding: 2px 8px;
+    position: absolute;
+    right: 5px;
+    border-radius: 8px;
+    top: -10px;
+}
+
+/* === VIDEO PAGE === */
+
+.video {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.card__video-container {
+    position: relative;
+    padding-top: 62.5%;
+}
+
+.card__video-container iframe {
+    width: 100%;
+    height: 100%; /* não coloco 100% pq vai ficar em cima do meu botao */
+    position: absolute; /* colocar pq as vezes ele nao respeita, pq o pai ou o filho estao sobrepondo, nesse caso vai preencher toda a tela do modal pq eu defini 100% ou qualquer % */
+    top: 0;
 }

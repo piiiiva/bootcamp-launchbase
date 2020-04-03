@@ -11,7 +11,9 @@ server.set("view engine", "njk") //5 -- 8 trocar "html" por "njk" e renomeio tod
 
 nunjucks.configure("views", { //6
     express: server,
-    autoescape: false
+    autoescape: false,
+    noCache: true, // para desenvolvimento
+    
 })
 
 //4 
@@ -38,6 +40,21 @@ server.get("/", function (req, res){ // assim que der certo o .get, executa a fu
 
 server.get("/portfolio", function (req, res) { //dentro da rota principal procura o /portfolio e o retorno vai ser renderizar a página
     return res.render("portfolio", { items: videos })
+})
+
+server.get("/video", (request, response) => {
+    const id = request.query.id
+    const video = videos.find(function(video) {
+        return video.id == id
+    })
+
+    if (!video) {
+        return response.send('Video not found!')
+    }
+
+    return response.render('video', { item: video })
+
+    
 })
 
 server.listen(5000, function() { //3

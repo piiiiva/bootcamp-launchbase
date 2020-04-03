@@ -3,7 +3,8 @@ module.exports = [
         id: "2alg7MQ6_sI",
         title: "Git e Github na prática! | Mayk Brito",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true,
     },
     {
         id: "erInHkjxkL8",
@@ -15,13 +16,15 @@ module.exports = [
         id: "mcd7lqpUzIA",
         title: "Contribuições no Github! | Diego Fernandes",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true,
     },
     {
         id: "GykTLqODQuU",
         title: "Formulário Animado com JS e CSS | Mayk Brito",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true,
     },
     {
         id: "HN1UjzRSdBk",
@@ -39,13 +42,15 @@ module.exports = [
         id: "bVAhNaxBEjM",
         title: "Debug de aplicações Node.js com VSCode | Diego Fernandes",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true,
     },
     {
         id: "pW8GKJtHSk8",
         title: "Pré Processador SASS | Cleiton Souza",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true,
     },
     {
         id: "GSqR2i-Pq6o",

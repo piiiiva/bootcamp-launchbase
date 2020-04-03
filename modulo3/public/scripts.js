@@ -9,17 +9,11 @@ for (let card of cards) {
         const videoId = card.getAttribute("id") /* Antes de criar eu defini ela no querySelector no iframe, decidi que seria dinamico pra pegar o id e pra fazer isso 
         tem que colocar um id para cada <div class="card" id="id do vídeo" assim, o for percorre todos os cards e pega o id do video de cada um e substitui
         no src do iframe no modalOverlay.querySelector("iframe").src */
-        modalOverlay.classList.add('active') // essa é funçao principal dessa funçao, quando clicar eu vou adicionar a classe active na minha <div class= "modal-overlay"
-        modalOverlay.querySelector("iframe").src = `https://youtube.com/embed/${videoId}` // poderia ser document.classList.add ... mas eu já conehço o modal e o script nao precisa percorrer o html inteiro procurando o elemento que eu quero
+        window.location.href = `/video?id=${videoId}` // ao clicar envia o usuário para o link desejado
     })
 }
 
-if (document.querySelector(".close-modal") != null) {
-    document.querySelector(".close-modal").addEventListener("click", function() {
-        modalOverlay.classList.remove("active") // preciso remover a funçao do evento anterior para voltar ao normal a página. Se nao fizer isso a <div class= "modal-overlay"> vai continuar com a class = "active" e manter as propriedades definidas no css, opacidade 1 no caso 
-        modalOverlay.querySelector("iframe").src = "" // se nao fizer isso o veio vai continuar rodando mesmo depoios de fechar a janela
-    })
-}
+
 
 
 /* CONTENTPAGE*/
