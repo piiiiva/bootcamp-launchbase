@@ -1,52 +1,53 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>NOME DO CURSO</title>
+    <title>{{course.name}}</title>
+    <link rel="stylesheet" href="styles.css">
 {% endblock head %}
 
 
 {% block content %}
     <div id="wrapper">
-        <h1>NOME DO CURSO - ROCKETSEAT</h1>
+        <h1>{{course.name}} - ROCKETSEAT</h1>
     </div>
 
     <section class="cards-coursePage"> 
 
         <div class="card-coursePage" id="launchbase">
             <div class="card__image-coursePage">
-                <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="">
+                <img src="{{course.image}}" alt="">
             </div>
             <div class="card__coursePage__info">
-                <p>Módulos: 10</p>
-                <p class="card__contentPage__price">R$ 900,00</p>
+                <p>Módulos: {{course.modules}}</p>
+                <p class="card__contentPage__price">{{course.price}}</p>
             </div>
            
             <div class="card__coursePage__description">
-                <p class="effectText">Frase de efeito do curso</p>
+                <p class="effectText">{{course.effectText}}</p>
 
                 <div class="wrapper-course-info">
                     <h2 class="course_info_title">O que você vai aprender?</h2>
-                    <p class="course_info_content"> teste teste teste teste</p>
+                    <p class="course_info_content">{{course.learn}}</p>
                 </div>
 
                 <div class="wrapper-course-info">
                     <h2 class="course_info_title">Quem será o piloto?</h2>
-                    <p class="course_info_content"> teste teste teste teste</p>
+                    <p class="course_info_content">{{course.instructor}}</p>
                 </div>
 
                 <div class="wrapper-course-info">
                     <h2 class="course_info_title">Quais são os requisitos para ser aluno?</h2>
-                    <p class="course_info_content"> teste teste teste teste</p>
+                    <p class="course_info_content">{{course.requirements}}</p>
                 </div>
 
                 <div class="wrapper-course-info">
                     <h2 class="course_info_title">Qual o formato do curso?</h2>
-                    <p class="course_info_content"> teste teste teste teste</p>
+                    <p class="course_info_content">{{course.format}}</p>
                 </div>
 
                 <div class="wrapper-course-info">
                     <h2 class="course_info_title">O curso oferece certificado?</h2>
-                    <p class="course_info_content"> teste teste teste teste</p>
+                    <p class="course_info_content">{{course.certificate}}</p>
                 </div>
                 
 

@@ -23,38 +23,20 @@
     </div>
 
     <section class="cards-contentPage">
+        {% for course in courses %}
+                <div class="card-contentPage" id="{{course.id}}">
+                <div class="card__image-contentPage">
+                    <img src="{{course.image}}" alt="">
+                </div>
+                <div class="card__contentPage__info">
+                    <p>Módulos: {{course.modules}}</p>
+                    <p class="card__contentPage__price">{{course.price}}</p>
+                </div>
 
-        <div class="card-contentPage" id="launchbase">
-            <div class="card__image-contentPage">
-                <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="">
-            </div>
-            <div class="card__contentPage__info">
-                <p>Módulos: 10</p>
-                <p class="card__contentPage__price">R$ 900,00</p>
-            </div>
+                </div>
+        {% endfor %}
+        
 
-        </div>
-
-        <div class="card-contentPage" id="starter">
-            <div class="card__image-contentPage">
-                <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="">
-            </div>
-            <div class="card__contentPage__info">
-                <p>Módulos: 10</p>
-                <p class="card__contentPage__price">Free</p>
-            </div>
-        </div>
-
-
-        <div class="card-contentPage" id="gostack">
-            <div class="card__image-contentPage">
-                <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="">
-            </div>
-            <div class="card__contentPage__info">
-                <p>Módulos: 10</p>
-                <p class="card__contentPage__price">R$ 2.000,00</p>
-            </div>
-        </div>
 
     </section>
 

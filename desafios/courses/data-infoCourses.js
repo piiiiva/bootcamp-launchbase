@@ -8,13 +8,13 @@ module.exports = [
         "effectText": "Descubra o caminho para dominar a OmniStack.",
         "learn": "Dominar a linguagem de programação Javascript e todo o seu avaço com o Javascript ES6+.",
         "instructor": "Diego Fernandes - Programador full-stack, apaixonado pelas melhores tecnologias de desenvolvimento back-end, front-end e mobile, é co-fundador e CTO na Rocketseat.",
-        "requerimets": "Conhecimento prévio da linguagem Javascript.",
+        "requeriments": "Conhecimento prévio da linguagem Javascript.",
         "format": "Video aulas tottalmente gratuitas, disponíveis a qualquer momento, que garantirão o seu pontapé inicial, deixando-o preparado para o Go Stack e dominar a Omnistack.",
         "certificate": "Sim, o certificado é entregue após o cumprimento de todas as atividades, incluindo o desafio final, garantindo que você dominou as ferramentas e apresentando o seu desempenho durante o bootcamp. Ou seja, esse não é um certificado de participação, e sim uma certificação.",
     },
 
     {   
-        "ïd": "launchbase",
+        "id": "launchbase",
         "name": "LaunchBase",
         "image": "https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg",
         "modules": 10,

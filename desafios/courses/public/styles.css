@@ -134,6 +134,10 @@ header {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 .card-contentPage {
     background-color: rgba(0, 0, 0, 0.144);
     border-radius: 10%;
@@ -146,6 +150,7 @@ header {
 .card__contentPage__info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 
 .card__contentPage__price {
