@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+
+:root {
+    --color-background-first: #537bfd;
+    --color-background-second: white;
+    --color-text-first: #25282B;
+    --color-text-second: #777;
+    --color-tittle-primary: #537bfd;
+    --color-tittle-secondary: #eee;
+    --color-hover-primary: ;
+    
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background-first);
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+header {
+    background-color: var(--color-background-second);
+    padding: 32px;
+    width: 100%;
+    text-align: center;
+}
+
+header .links {
+    font-size: 16px;
+}
+
+.links a + a {
+    margin-left: 32px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--color-text-second);
+    font-weight: 500;
+    position: relative;;
+}
+
+
+.links a.active {
+    color: var(--color-background-first);
+    font-weight: 900;
+}
+
+.links a:hover {
+    color: var(--color-background-first);
+}
+
+.links a::before{
+    content: '';
+    background-color: var(--color-background-first);
+    width: 0%;
+    position: absolute;
+    height: 3px;
+    bottom: 100%;
+    left: 0;
+
+}
+
+.links a::after{
+    content: '';
+    background-color: var(--color-text-second);
+    width: 0%;
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+}
+
+.links a:hover::before{
+    width: 100%;
+    transition: width 320ms cubic-bezier(0.93, 0.01, 0.92, 1.66);
+}
+
+.links a:hover::after{
+    width: 100%;
+    transition: width 320ms cubic-bezier(0.93, 0.01, 0.92, 1.66);
+}
