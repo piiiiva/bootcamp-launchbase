@@ -1,0 +1,25 @@
+{
+  "instructors": [
+    {
+      "avatar_url": "https://google.com",
+      "name": "Baze Adin",
+      "birth": "2020-04-06",
+      "gender": "M",
+      "services": "ha, h2"
+    },
+    {
+      "avatar_url": "https://google.com",
+      "name": "Rodrigo Piva",
+      "birth": "2020-04-06",
+      "gender": "M",
+      "services": "ha, h2"
+    },
+    {
+      "avatar_url": "https://google.com",
+      "name": "Rodrigo Piva",
+      "birth": "2020-04-06",
+      "gender": "M",
+      "services": "ha, h2"
+    }
+  ]
+}
