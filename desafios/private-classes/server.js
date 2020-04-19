@@ -4,7 +4,7 @@ const routes = require('./routes')
 
 const server = express() //2
 
-// o express vai ficar observando essa pasta public pra servir os arquivos estáticos, onde ficara o css por exemplo
+server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public')) // 7 tenho que criar uma pasta public que vai conter o css dentre outras coisas
 server.use(routes)
 
