@@ -13,5 +13,15 @@ module.exports = {
         }
         
         return age
+    },
+    date: function(timestamp) {
+        const date = new Date(timestamp)
+
+        const year = date.getUTCFullYear()
+        const month = `0${date.getUTCMonth() + 1}`.slice(-2) // pega os dois últimos dígitos, se vier 012, vai pegar só 12
+        const day = `0${date.getUTCDate()}`.slice(-2)
+
+        return (`${year}-${month}-${day}`)
     }
 }
+
