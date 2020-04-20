@@ -5,7 +5,7 @@
       "avatar_url": "https://unsplash.com/photos/P1vXpgpL208",
       "name": "Rodrigo Diego Piva",
       "birth": 658195200000,
-      "education": "especialization",
+      "education": "mestrado",
       "classType": "Local",
       "services": "calculo I, calculo II",
       "created_at": 1587262583359
@@ -15,10 +15,11 @@
       "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
       "name": "Dayane Dornelles",
       "birth": 547171200000,
-      "education": "master",
+      "education": "tecnico",
       "classType": "Distance",
       "services": "Metodologia, Fontes de Informação",
       "created_at": 1587262700682
     }
+    
   ]
 }
