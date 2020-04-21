@@ -19,7 +19,16 @@
       "classType": "Distance",
       "services": "Metodologia, Fontes de Informação",
       "created_at": 1587262700682
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
+      "name": "Dayane Dornelles",
+      "birth": 547171200000,
+      "education": "doutorado",
+      "classType": "Distance",
+      "services": "Metodologia, Fontes de Informação",
+      "created_at": 1587503451128
     }
-    
   ]
 }

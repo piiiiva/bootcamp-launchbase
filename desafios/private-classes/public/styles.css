@@ -195,7 +195,7 @@ input::placeholder {
     font-weight: 500;
 }
 
-
+.button,
 form button[type="submit"] {
     width: 100%;
     padding: 16px 32px;
@@ -214,3 +214,12 @@ select {
     font-weight: 700;
 }
 
+.button {
+    width: 20%;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    float: right;
+    justify-content: center;
+}

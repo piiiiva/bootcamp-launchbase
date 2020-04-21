@@ -14,12 +14,16 @@ routes.get('/teachers/new', function(req, res){
     return res.render('teachers/create')
 })
 
+routes.post('/teachers', teachers.post) 
+
 routes.get('/teachers/:id', teachers.show)
 
-routes.post('/teachers', teachers.post) 
+routes.get('/teachers/:id/edit', teachers.edit)
 
 routes.get('/students', function(req, res){
     return res.render('students/index')
 })
+
+
 
 module.exports = routes
