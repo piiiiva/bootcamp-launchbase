@@ -1,22 +1,24 @@
-const express = require('express') //1
-const nunjucks = require('nunjucks') // nossa template engine o motor
+const express = require('express') 
+const nunjucks = require('nunjucks')
 const routes = require('./routes')
+const methodOverride = require('method-override')
 
-const server = express() //2
+const server = express() 
 
 server.use(express.urlencoded({ extended: true }))
-server.use(express.static('public')) // 7 tenho que criar uma pasta public que vai conter o css dentre outras coisas
+server.use(express.static('public')) 
+server.use(methodOverride('_method'))
 server.use(routes)
 
-server.set("view engine", "njk") //5 -- 8 trocar "html" por "njk" e renomeio todos os meus arquivos html por njk ... precisa instalar o templateNujucks e habilitar o emmet do javascrip no ctrl+shit+P settings.json .. se nao habilitar nao vai funcionar o div.class por exemplo
+server.set("view engine", "njk") 
 
-nunjucks.configure("views", { //6
+nunjucks.configure("views", { 
     express: server,
     autoescape: false,
-    noCache: true, // para desenvolvimento
+    noCache: true, 
     
 })
 
-server.listen(5000, function() { //3
+server.listen(5000, function() { 
     console.log("Server is running")
 })

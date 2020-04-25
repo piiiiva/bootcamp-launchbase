@@ -2,33 +2,23 @@
   "teachers": [
     {
       "id": 1,
-      "avatar_url": "https://unsplash.com/photos/P1vXpgpL208",
-      "name": "Rodrigo Diego Piva",
-      "birth": 658195200000,
+      "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
+      "name": "Dayane Dornelles ",
+      "birth": 640915200000,
       "education": "mestrado",
       "classType": "Local",
-      "services": "calculo I, calculo II",
-      "created_at": 1587262583359
+      "services": "Metodologia, Fontes de Informação",
+      "created_at": 1587845261277
     },
     {
       "id": 2,
       "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
-      "name": "Dayane Dornelles",
-      "birth": 547171200000,
-      "education": "tecnico",
-      "classType": "Distance",
-      "services": "Metodologia, Fontes de Informação",
-      "created_at": 1587262700682
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
-      "name": "Dayane Dornelles",
-      "birth": 547171200000,
-      "education": "doutorado",
-      "classType": "Distance",
-      "services": "Metodologia, Fontes de Informação",
-      "created_at": 1587503451128
+      "name": "Rodrigo",
+      "birth": 641088000000,
+      "education": "especializacao",
+      "classType": "Local",
+      "services": "calculo I, calculo II",
+      "created_at": 1587845289071
     }
   ]
 }

@@ -37,7 +37,7 @@ exports.post = function(req, res){
 
     birth = Date.parse(req.body.birth)
     const created_at = Date.now()
-    console.log(created_at)
+
     const id = Number(data.teachers.length + 1)
     
 
@@ -78,4 +78,35 @@ exports.edit = function(req,res){
 
 
     return res.render('teachers/edit', { teacher })
+}
+
+exports.update = function(req, res) {
+
+    let id = Number(req.params.id)
+    let index = 0
+
+    console.log(id)
+    const foundTeachers = data.teachers.find(function(teacher, foundIndex){
+        if (id == teacher.id) {
+            index = foundIndex
+            return true
+        }
+    })
+
+    if (!foundTeachers) return res.send("Professor não encontrado")
+
+    const teachers = {
+        ...foundTeachers,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.teachers[index] = teachers
+    
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if (err) return res.send('Professor não encontrado!')
+
+        return res.redirect(`/teachers/${id}`)
+    })
+
 }

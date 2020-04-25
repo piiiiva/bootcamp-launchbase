@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form class="card" id="teachers" method="POST" action="/teachers">
+<form class="card" id="teachers" method="POST" action="/teachers/{{teacher.id}}?_method=PUT">
     <section class="avatar" style="
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
