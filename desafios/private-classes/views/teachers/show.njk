@@ -10,7 +10,7 @@
     <section class="details">
         <h3>detalhes do professor</h3>
 
-        <div class="item" id="{{teachers.id}}">
+        <div class="item">
             <div>Nome</div>
             <div>{{teacher.name}}</div>
         </div>
@@ -45,6 +45,8 @@
             <div>Desde</div>
             <div>{{teacher.created_at}}</div>
         </div>
+
+        <input type="hidden" name="id" value={{teacher.id}}>
 
         <a href="{{teacher.id}}/edit" class="button" id="toTeacherEdit">Editar</a>
     </section>

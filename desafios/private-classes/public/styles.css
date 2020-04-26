@@ -223,3 +223,8 @@ select {
     float: right;
     justify-content: center;
 }
+
+#form-delete button[type="submit"] {
+    background: rgba(255, 99, 71, 0.835);
+    margin-top: 8px;
+}
