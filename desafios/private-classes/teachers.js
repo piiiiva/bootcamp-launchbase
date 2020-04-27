@@ -4,6 +4,18 @@ const Intl = require('intl')
 const { age, graduation, date } = require('./utils')
 
 
+exports.index = function(req, res){
+   
+   const listedTeachers = data.teachers
+
+   for (const teacher of listedTeachers) {
+       const services = teacher.services.toString().split(",")
+       teacher.services = services
+   }
+
+   return res.render('teachers/index', {teachers: listedTeachers})
+}
+
 exports.show = function(req, res) {
     const { id } = req.params
 
@@ -17,7 +29,7 @@ exports.show = function(req, res) {
         ...foundTeachers,
         age: age(foundTeachers.birth),
         education: graduation(foundTeachers.education),
-        services: foundTeachers.services.split(","),
+        services: foundTeachers.services.toString().split(","),
         created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeachers.created_at),
     }
 
@@ -82,7 +94,7 @@ exports.edit = function(req,res){
 
 exports.update = function(req, res) {
 
-    let id = Number(req.params.id)
+    const id = req.params.id
     let index = 0
 
     console.log(id)
@@ -98,7 +110,8 @@ exports.update = function(req, res) {
     const teachers = {
         ...foundTeachers,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.params.id)
     }
 
     data.teachers[index] = teachers

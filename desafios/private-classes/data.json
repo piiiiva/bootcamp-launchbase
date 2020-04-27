@@ -2,8 +2,8 @@
   "teachers": [
     {
       "id": 1,
-      "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
-      "name": "Dayane Dornelles ",
+      "avatar_url": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80",
+      "name": "Dayane Dornelles",
       "birth": 640915200000,
       "education": "mestrado",
       "classType": "Local",
@@ -12,14 +12,23 @@
     },
     {
       "id": 2,
-      "avatar_url": "https://unsplash.com/photos/6jopFhZkGGk",
+      "avatar_url": "https://images.unsplash.com/photo-1501876991173-f9c47cd28268?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=706&q=80",
       "name": "Rodrigo",
       "birth": 641088000000,
       "education": "especializacao",
       "classType": "Local",
       "services": "calculo I, calculo II",
       "created_at": 1587845289071
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Edier Rosa",
+      "birth": 641088000000,
+      "education": "mestrado",
+      "classType": "Distance",
+      "services": "Filosofia",
+      "created_at": 1587910847779
     }
-        
   ]
 }

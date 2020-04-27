@@ -1,46 +1,36 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<div class="card">
-    <section class="avatar" style="
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
-    background: url(https://source.unsplash.com/collection/1960772/500x500) no-repeat center center / cover">
-    </section>
-    <section class="details">
-        <h3>detalhes do professor</h3>
+<div class="card table-container">
+    
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Nome completo</th>
+                <th>Acompanhamento</th>
+                <th>Ação</th>
 
-        <div class="item">
-            <div>Nome</div>
-            <div>Rodrigo Diego Piva</div>
-        </div>
 
-        <div class="item">
-            <div>Idade</div>
-            <div>30</div>
-        </div>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>
+                    <span style="background-image: url({{teacher.avatar_url}})"></span>
+                    {{teacher.name}}</td>
+                    
+                <td>
+                    {% for service in teacher.services %}
+                        <span>{{service}}</span>
+                    {% endfor %}
+                </td>
+                <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-        <div class="item">
-            <div>Grau de escolaridade</div>
-            <div>Especialização</div>
-        </div>
-
-        <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-                <span>Matemática Básica</span>
-                <span>Cálculo I</span>
-                <span>Cálculo II</span>
-                <span>Cálculo III</span>
-                <span>Matmática Discreta</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Desde</div>
-            <div>05/04/2013</div>
-        </div>
-    </section>
 </div>
     
 {% endblock content %}

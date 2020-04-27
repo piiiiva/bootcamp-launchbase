@@ -155,7 +155,8 @@ header .links {
     color: var(--color-text-third);
 }
 
-.details .item div:nth-child(2) span {
+.details .item div:nth-child(2) span,
+.table-container table tbody tr td span {
     font-size: 12px;
     font-weight: 700;
     color: var(--color-text-third);
@@ -167,6 +168,9 @@ header .links {
     border-radius: 16px;
 
     display: inline-block;
+}
+.table-container table tbody tr td span {
+    margin-top: 0;
 }
 
 /*  FORM  */
@@ -227,4 +231,65 @@ select {
 #form-delete button[type="submit"] {
     background: rgba(255, 99, 71, 0.835);
     margin-top: 8px;
+}
+
+/* TEACHERS INDEX TABLE */
+
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container table thead tr th {
+    text-transform: uppercase;
+    color: var(--color-text-second);
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid  rgba(83, 123, 253, 0.2);
+    text-transform: capitalize;
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 5px 3px 6px -5px rgba(0, 0, 0, 0.226) ;
+}
+
+tbody tr td:last-child a {
+    background-color: var(--color-background-first);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+.table-container table tbody tr td:last-child,
+.table-container table thead tr th:last-child {
+    text-align: center;
 }
