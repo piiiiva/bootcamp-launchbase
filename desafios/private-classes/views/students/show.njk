@@ -1,0 +1,55 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card">
+    <section class="avatar" style="
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    background: url({{teacher.avatar_url}}) no-repeat center center / cover">
+    </section>
+    <section class="details">
+        <h3>detalhes do professor</h3>
+
+        <div class="item">
+            <div>Nome</div>
+            <div>{{teacher.name}}</div>
+        </div>
+
+        <div class="item">
+            <div>Idade</div>
+            <div>{{teacher.age}}</div>
+        </div>
+
+        <div class="item">
+            <div>Grau de escolaridade</div>
+            <div>{{teacher.education}}</div>
+            
+        </div>
+
+        <div class="item">
+            <div>Tipo de aula</div>
+            <div>{{ "Presencial" if teacher.classType == "local" else "À distância" }} </div>
+        </div>
+
+        <div class="item">
+            <div>Acompanhamento</div>
+            <div>
+                {% for service in teacher.services %}
+                    <span>{{service}}</span>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Desde</div>
+            <div>{{teacher.created_at}}</div>
+        </div>
+
+        <input type="hidden" name="id" value={{teacher.id}}>
+
+        <a href="{{teacher.id}}/edit" class="button" id="toTeacherEdit">Editar</a>
+    </section>
+</div>
+    
+{% endblock content %}

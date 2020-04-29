@@ -1,0 +1,108 @@
+<div class="item">
+    <div>Imagem</div>
+    <input 
+    type="url" 
+    name="avatar_url" 
+    value="{{ teacher.avatar_url }}"
+    placeholder="Insira o link de uma imagem - http://"
+    >
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <input 
+    type="text" 
+    name="name"
+    value="{{ teacher.name }}" 
+    placeholder="Nome Completo"
+    >
+</div>
+
+<div class="item">
+    <div>Data de nascimento</div>
+    <input 
+    type="date" 
+    name="birth"
+    value="{{ teacher.birth }}"
+    >
+</div>
+
+<div class="item">
+    <div>Grau de escolaridade</div>
+    <div>
+        <select name="education" form="teachers" required>
+            <option value="medio"
+            {% if teacher.education == "medio" %}
+                selected
+            {% endif %}
+            >Ensino Médio</option>
+            <option value="tecnico"
+            {% if teacher.education == "tecnico" %}
+                selected
+            {% endif %}
+            >Curso Técnico</option>
+            <option value="bacharelado"
+            {% if teacher.education == "bacharelado" %}
+                selected
+            {% endif %}
+            >Graduação</option>
+            <option value="especializacao"
+            {% if teacher.education == "especializacao" %}
+                selected
+            {% endif %}
+            >Especialização</option>
+            <option value="mestrado"
+            {% if teacher.education == "mestrado" %}
+                selected
+            {% endif %}
+            >Mestrado</option>
+            <option value="doutorado"
+            {% if teacher.education == "doutorado" %}
+                selected
+            {% endif %}
+            >Doutorado</option>
+
+        </select>
+    </div>
+    
+</div>
+
+<div class="item">
+    <div>Tipo de aula</div>
+    <div>
+        <span>
+            <input 
+            type="radio" 
+            name="classType" 
+            value="Local"
+            {% if teacher.classType == "Local" %}
+                checked
+            {% endif %}
+            > Presencial         
+        </span>
+
+        <span>
+            <input 
+            type="radio" 
+            name="classType" 
+            value="Distance"
+            {% if teacher.classType == "Distance" %}
+                checked
+            {% endif %}
+            >À distância         
+        </span>
+        
+
+    </div>
+</div>
+
+<div class="item">
+    <div>Área de Atuação</div>
+    <input 
+    type="text" 
+    name="services" 
+    value="{{ teacher.services }}"
+    placeholder="Disciplinas separadas por vírgula">
+</div>
+
+<button type="submit">Salvar</button>

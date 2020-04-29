@@ -1,7 +1,7 @@
 const fs = require('fs')
-const data = require('./data.json')
+const data = require('../data.json')
 const Intl = require('intl')
-const { age, graduation, date } = require('./utils')
+const { age, graduation, date } = require('../utils')
 
 
 exports.index = function(req, res){
@@ -16,25 +16,8 @@ exports.index = function(req, res){
    return res.render('teachers/index', {teachers: listedTeachers})
 }
 
-exports.show = function(req, res) {
-    const { id } = req.params
-
-    const foundTeachers = data.teachers.find(function(teacher){
-        return teacher.id == id
-    })
-
-    if (!foundTeachers) return res.send("Professor não encontrado!")
-
-    const teacher = {
-        ...foundTeachers,
-        age: age(foundTeachers.birth),
-        education: graduation(foundTeachers.education),
-        services: foundTeachers.services.toString().split(","),
-        created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeachers.created_at),
-    }
-
-
-    return res.render('teachers/show', { teacher })
+exports.create = function(req, res){
+    return res.render('teachers/create')
 }
 
 exports.post = function(req, res){
@@ -71,6 +54,27 @@ exports.post = function(req, res){
         
     })
 
+}
+
+exports.show = function(req, res) {
+    const { id } = req.params
+
+    const foundTeachers = data.teachers.find(function(teacher){
+        return teacher.id == id
+    })
+
+    if (!foundTeachers) return res.send("Professor não encontrado!")
+
+    const teacher = {
+        ...foundTeachers,
+        age: age(foundTeachers.birth),
+        education: graduation(foundTeachers.education),
+        services: foundTeachers.services.toString().split(","),
+        created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeachers.created_at),
+    }
+
+
+    return res.render('teachers/show', { teacher })
 }
 
 exports.edit = function(req,res){
