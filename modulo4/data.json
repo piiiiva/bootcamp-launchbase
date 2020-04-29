@@ -1,4 +1,28 @@
 {
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80",
+      "name": "RODRIGO DIEGO PIVA",
+      "email": "piiiiva@gmail.com",
+      "birth": 643593600000,
+      "gender": "M",
+      "blood": "B0",
+      "weight": "108",
+      "height": "190"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80",
+      "name": "DAYANE DORNELLE",
+      "email": "dayane.dornelles@udesc.br",
+      "birth": 661651200000,
+      "gender": "F",
+      "blood": "A1",
+      "weight": "50",
+      "height": "160"
+    }
+  ],
   "instructors": [
     {
       "id": 3,

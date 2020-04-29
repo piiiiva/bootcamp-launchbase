@@ -1,12 +1,11 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age, date } = require('./utils')
+const data = require('../data.json')
+const { age, date } = require('../utils')
 
 exports.index = function(req, res) {
     return res.render('instructors/index', {instructors: data.instructors})
 }
 
-//show
 exports.show = function(req, res) {
     const { id } = req.params
 
@@ -27,7 +26,10 @@ exports.show = function(req, res) {
     return res.render('instructors/show', { instructor })
 }
 
-// create
+exports.create = function(req, res) {
+    return res.render('instructors/create')
+}
+
 exports.post = function(req, res) {
     //["avatar_url","name","birth","gender","services"]
     const keys = Object.keys(req.body)
@@ -44,8 +46,6 @@ exports.post = function(req, res) {
     const created_at = Date.now()
     const id = Number(data.instructors.length + 1) // envolver no construtor Number para garantir que será um número sempre
 
-
-    //[{...}]
     data.instructors.push({
         id,
         avatar_url,
@@ -65,7 +65,6 @@ exports.post = function(req, res) {
  
 }
 
-// edit
 exports.edit = function(req,res){
     const { id } = req.params
 
@@ -82,8 +81,6 @@ exports.edit = function(req,res){
 
     return res.render('instructors/edit', { instructor })
 }
-
-// put
 
 exports.put = function(req, res){
     const { id } = req.body
@@ -113,8 +110,6 @@ exports.put = function(req, res){
         return res.redirect(`instructors/${id}`)
     })
 }
-
-// delete
 
 exports.delete = function(req, res) {
     const { id } = req.body
