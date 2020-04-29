@@ -1,27 +1,9 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date } = require('../utils')
+const { date } = require('../utils')
 
 exports.index = function(req, res) {
     return res.render('members/index', {members: data.members})
-}
-
-exports.show = function(req, res) {
-    const { id } = req.params
-
-    const foundMember = data.members.find(function(member){
-        return member.id == id
-    })
-
-    if (!foundMember) return res.send('Member not found')
-
-    const member = {
-        ...foundMember,
-        age: age(foundMember.birth),
-        
-    }
-    
-    return res.render('members/show', { member })
 }
 
 exports.create = function(req, res) {
@@ -61,6 +43,24 @@ exports.post = function(req, res) {
  
 }
 
+exports.show = function(req, res) {
+    const { id } = req.params
+
+    const foundMember = data.members.find(function(member){
+        return member.id == id
+    })
+
+    if (!foundMember) return res.send('Member not found')
+
+    const member = {
+        ...foundMember,
+        birth: date(foundMember.birth).birthDay
+        
+    }
+    
+    return res.render('members/show', { member })
+}
+
 exports.edit = function(req,res){
     const { id } = req.params
 
@@ -72,12 +72,11 @@ exports.edit = function(req,res){
 
     const member = {
         ...foundMember,
-        birth: date(foundMember.birth)
+        birth: date(foundMember.birth).iso
     }
 
     return res.render('members/edit', { member })
 }
-
 
 exports.put = function(req, res){
     const { id } = req.body
@@ -107,7 +106,6 @@ exports.put = function(req, res){
         return res.redirect(`members/${id}`)
     })
 }
-
 
 exports.delete = function(req, res) {
     const { id } = req.body
