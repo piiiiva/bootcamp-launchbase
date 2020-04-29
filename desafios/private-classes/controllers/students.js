@@ -6,18 +6,19 @@ const { age, graduation, date } = require('../utils')
 
 exports.index = function(req, res){
    
-   const listedMembers = data.members
+   const listedStudents = data.students
 
-   for (const member of listedMembers) {
-       const services = member.services.toString().split(",")
-       member.services = services
-   }
+for (const student of listedStudents) {
+    const services = student.services.toString().split(",")
+    student.services = services
+}
+   
 
-   return res.render('members/index', {members: listedMembers})
+   return res.render('students/index', {students: listedStudents})
 }
 
 exports.create = function(req, res){
-    return res.render('members/create')
+    return res.render('students/create')
 }
 
 exports.post = function(req, res){
@@ -33,10 +34,10 @@ exports.post = function(req, res){
     birth = Date.parse(req.body.birth)
     const created_at = Date.now()
 
-    const id = Number(data.members.length + 1)
+    const id = Number(data.students.length + 1)
     
 
-    data.members.push({
+    data.students.push({
         id,
         avatar_url,
         name,
@@ -50,7 +51,7 @@ exports.post = function(req, res){
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send("Erro de escrita!!!")
 
-        return res.redirect('members')
+        return res.redirect('students')
         
     })
 
@@ -59,41 +60,41 @@ exports.post = function(req, res){
 exports.show = function(req, res) {
     const { id } = req.params
 
-    const foundMembers = data.members.find(function(member){
-        return member.id == id
+    const foundStudents = data.students.find(function(student){
+        return student.id == id
     })
 
-    if (!foundMembers) return res.send("Professor não encontrado!")
+    if (!foundStudents) return res.send("Professor não encontrado!")
 
-    const member = {
-        ...foundMembers,
-        age: age(foundMembers.birth),
-        education: graduation(foundMembers.education),
-        services: foundMembers.services.toString().split(","),
-        created_at: new Intl.DateTimeFormat('pt-BR').format(foundMembers.created_at),
+    const student = {
+        ...foundStudents,
+        age: age(foundStudents.birth),
+        education: graduation(foundStudents.education),
+        services: foundStudents.services.toString().split(","),
+        created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudents.created_at),
     }
 
 
-    return res.render('members/show', { member })
+    return res.render('students/show', { student })
 }
 
 exports.edit = function(req,res){
 
     const { id } = req.params
 
-    const foundMembers = data.members.find(function(member){
-        return member.id == id
+    const foundStudents = data.students.find(function(student){
+        return student.id == id
     })
 
-    if (!foundMembers) return res.send('Professor não encontrado')
+    if (!foundStudents) return res.send('Professor não encontrado')
 
-    const member = {
-        ...foundMembers,
-        birth: date(foundMembers.birth)
+    const student = {
+        ...foundStudents,
+        birth: date(foundStudents.birth)
     }
 
 
-    return res.render('members/edit', { member })
+    return res.render('students/edit', { student })
 }
 
 exports.update = function(req, res) {
@@ -102,28 +103,28 @@ exports.update = function(req, res) {
     let index = 0
 
     console.log(id)
-    const foundMembers = data.members.find(function(member, foundIndex){
-        if (id == member.id) {
+    const foundStudents = data.students.find(function(student, foundIndex){
+        if (id == student.id) {
             index = foundIndex
             return true
         }
     })
 
-    if (!foundMembers) return res.send("Professor não encontrado")
+    if (!foundStudents) return res.send("Professor não encontrado")
 
-    const members = {
-        ...foundMembers,
+    const students = {
+        ...foundStudents,
         ...req.body,
         birth: Date.parse(req.body.birth),
         id: Number(req.params.id)
     }
 
-    data.members[index] = members
+    data.students[index] = students
     
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send('Professor não encontrado!')
 
-        return res.redirect(`/members/${id}`)
+        return res.redirect(`/students/${id}`)
     })
 
 }
@@ -131,16 +132,16 @@ exports.update = function(req, res) {
 exports.delete = function (req, res) {
     const { id } = req.body
 
-    const filteredMembers = data.members.filter(function(member){
-        return member.id != id
+    const filteredStudents = data.students.filter(function(student){
+        return student.id != id
     })
 
-    data.members = filteredMembers
+    data.students = filteredStudents
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.sed("Write file error!")
     } )
 
-    return res.redirect('members')
+    return res.redirect('students')
 
 }

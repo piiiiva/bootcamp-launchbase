@@ -200,7 +200,8 @@ input::placeholder {
 }
 
 .button,
-form button[type="submit"] {
+form button[type="submit"],
+.table-container > a {
     width: 100%;
     padding: 16px 32px;
     background-color: var(--color-background-first);
@@ -210,6 +211,15 @@ form button[type="submit"] {
     font-size: 18px;
     letter-spacing: 0.75px;
     font-weight: 700;
+}
+
+.table-container > a {
+    display: inline-block;
+    width: auto;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-bottom: 16px;
+    font-size: 14px;
 }
 
 select {

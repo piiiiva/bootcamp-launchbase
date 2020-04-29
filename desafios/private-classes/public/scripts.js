@@ -1,5 +1,8 @@
+const menuItems = document.querySelectorAll("header .links a")
+const currentPage = location.pathname
 
-// document.getElementById('#toTeacherEdit').addEventListener("click", function(){ 
-//     const teacherId = document.querySelectorAll('.item').getAttribute("id")
-//     window.location.href = `/teachers/${teacherId}/edit`
-// })
+for (item of menuItems) {
+    if (currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("active")
+    }
+}
