@@ -8,10 +8,10 @@ exports.index = function(req, res){
    
    const listedStudents = data.students
 
-for (const student of listedStudents) {
-    const services = student.services.toString().split(",")
-    student.services = services
-}
+// for (const student of listedStudents) {
+//     const services = student.services.toString().split(",")
+//     student.services = services
+// }
    
 
    return res.render('students/index', {students: listedStudents})
@@ -29,29 +29,25 @@ exports.post = function(req, res){
             return res.send('Por favor, preencha todos os campos')
     }
 
-    let { avatar_url, name, birth, education, classType, services } = req.body
-
     birth = Date.parse(req.body.birth)
-    const created_at = Date.now()
 
-    const id = Number(data.students.length + 1)
+    let id = 1
+    const lastStudent = data.students[data.students.length - 1]
+
+    if (lastStudent) {
+        id = lastStudent.id + 1
+    }
     
-
     data.students.push({
         id,
-        avatar_url,
-        name,
-        birth,
-        education,
-        classType,
-        services,
-        created_at
+        ...req.body,
+        birth
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send("Erro de escrita!!!")
 
-        return res.redirect('students')
+        return res.redirect(`students/${id}`)
         
     })
 
@@ -70,7 +66,7 @@ exports.show = function(req, res) {
         ...foundStudents,
         age: age(foundStudents.birth),
         education: graduation(foundStudents.education),
-        services: foundStudents.services.toString().split(","),
+        // services: foundStudents.services.toString().split(","),
         created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudents.created_at),
     }
 

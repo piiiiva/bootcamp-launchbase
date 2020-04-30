@@ -1,5 +1,42 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80Rodrigo",
+      "name": "RODRIGO DIEGO PIVA",
+      "email": "piiiiva@gmail.com",
+      "birth": 641347200000,
+      "education": "3m",
+      "workLoad": "5"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80Rodrigo",
+      "name": "RODRIGO PIVA",
+      "email": "piiiiva@gmail.com",
+      "birth": 641347200000,
+      "education": "9f",
+      "workLoad": "5"
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80Rodrigo",
+      "name": "DAYANE DORNELLE",
+      "email": "dayane.dornelles@udesc.br",
+      "birth": 325814400000,
+      "education": "2m",
+      "workLoad": "30"
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80Rodrigo",
+      "name": "DAYANE DORNELLES Piva",
+      "email": "dayane.dornelles@gmail.com",
+      "birth": 325814400000,
+      "education": "2m",
+      "workLoad": "30"
+    }
+  ],
   "teachers": [
     {
       "id": 1,
