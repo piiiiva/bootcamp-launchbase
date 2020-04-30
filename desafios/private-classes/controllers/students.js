@@ -1,7 +1,7 @@
 const fs = require('fs')
 const data = require('../data.json')
 const Intl = require('intl')
-const { age, graduation, date } = require('../utils')
+const { age, graduation, date, grade } = require('../utils')
 
 
 exports.index = function(req, res){
@@ -60,14 +60,12 @@ exports.show = function(req, res) {
         return student.id == id
     })
 
-    if (!foundStudents) return res.send("Professor não encontrado!")
+    if (!foundStudents) return res.send("Aluno não encontrado!")
 
     const student = {
         ...foundStudents,
-        age: age(foundStudents.birth),
-        education: graduation(foundStudents.education),
-        // services: foundStudents.services.toString().split(","),
-        created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudents.created_at),
+        birth: date(foundStudents.birth).birthDay,
+        education: grade(foundStudents.education),
     }
 
 
@@ -86,7 +84,7 @@ exports.edit = function(req,res){
 
     const student = {
         ...foundStudents,
-        birth: date(foundStudents.birth)
+        birth: date(foundStudents.birth).iso
     }
 
 

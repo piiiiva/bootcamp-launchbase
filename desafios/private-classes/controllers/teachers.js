@@ -33,7 +33,12 @@ exports.post = function(req, res){
     birth = Date.parse(req.body.birth)
     const created_at = Date.now()
 
-    const id = Number(data.teachers.length + 1)
+    let id = 1
+    const lastTeacher = data.teachers[data.teachers.length - 1]
+
+    if (lastTeacher) {
+        id = lastTeacher.id + 1
+    }
     
 
     data.teachers.push({
@@ -89,7 +94,7 @@ exports.edit = function(req,res){
 
     const teacher = {
         ...foundTeachers,
-        birth: date(foundTeachers.birth)
+        birth: date(foundTeachers.birth).iso
     }
 
 
