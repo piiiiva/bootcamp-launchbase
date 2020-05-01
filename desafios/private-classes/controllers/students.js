@@ -1,20 +1,20 @@
 const fs = require('fs')
 const data = require('../data.json')
 const Intl = require('intl')
-const { age, graduation, date, grade } = require('../utils')
+const { date, grade } = require('../utils')
 
 
 exports.index = function(req, res){
    
-   const listedStudents = data.students
+    const listedStudents = [...data.students]
 
-// for (const student of listedStudents) {
-//     const services = student.services.toString().split(",")
-//     student.services = services
-// }
+    const newStudents = listedStudents.map((student) => ({
+        ...student, education: grade(student.education)
+    }))
    
+   console.log(newStudents)
 
-   return res.render('students/index', {students: listedStudents})
+   return res.render('students/index', {students: newStudents})
 }
 
 exports.create = function(req, res){

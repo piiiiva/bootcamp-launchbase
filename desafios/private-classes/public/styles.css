@@ -266,8 +266,8 @@ select {
 td, th {
     padding: 16px;
     border-bottom: 1px solid  rgba(83, 123, 253, 0.2);
-    text-transform: capitalize;
 }
+
 
 tbody tr:last-child td{
     border-bottom: none;
@@ -287,6 +287,11 @@ tbody tr td:first-child span {
     border-radius: 50%;
     border: 1px solid white;
     box-shadow: 5px 3px 6px -5px rgba(0, 0, 0, 0.226) ;
+}
+
+tbody tr td:first-child {
+    text-transform: capitalize
+
 }
 
 tbody tr td:last-child a {
