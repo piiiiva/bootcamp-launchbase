@@ -1,6 +1,6 @@
 
 module.exports = {
-    age: function(timestamp) {
+    age(timestamp) {
         const today = new Date()
         const birthDate = new Date(timestamp)
 
@@ -13,7 +13,7 @@ module.exports = {
 
         return age
     },
-    graduation: function(value) {
+    graduation(value) {
         switch (value) {
             case "medio":
                 return "Ensino Médio"
@@ -32,7 +32,7 @@ module.exports = {
                 break;
         }
     },
-    date: function(timestamp) {
+    date(timestamp) {
         const date = new Date(timestamp)
 
         const year = date.getUTCFullYear() 
@@ -48,7 +48,7 @@ module.exports = {
         }
 
     },
-    grade: function(value) {
+    grade(value) {
         switch (value) {
             case "5f":
                 return "5º Ano do Ensino Fundamental"
