@@ -31,60 +31,60 @@
     <div>Data de nascimento</div>
     <input 
     type="date" 
-    name="birth"
-    value="{{ student.birth }}"
+    name="birth_date"
+    value="{{ student.birth_date }}"
     >
 </div>
 
 <div class="item">
     <div>Ano escolar</div>
     <div>
-        <select name="education" form="students" required>
+        <select name="education_level" form="students" required>
             <option
             value="5f"
-            {% if student.education == "5f" %} selected {% endif %}
+            {% if student.education_level == "5f" %} selected {% endif %}
             >5º Ano Ensino Fundamental
             </option>
             
             <option
             value="6f"
-            {% if student.education == "6f" %} selected {% endif %}
+            {% if student.education_level == "6f" %} selected {% endif %}
             >6º Ano Ensino Fundamental
             </option>
 
             <option
             value="7f"
-            {% if student.education == "7f" %} selected {% endif %}
+            {% if student.education_level == "7f" %} selected {% endif %}
             >7º Ano Ensino Fundamental
             </option>
 
             <option
             value="8f"
-            {% if student.education == "8f" %} selected {% endif %}
+            {% if student.education_level == "8f" %} selected {% endif %}
             >8º Ano Ensino Fundamental
             </option>
 
             <option
             value="9f"
-            {% if student.education == "9f" %} selected {% endif %}
+            {% if student.education_level == "9f" %} selected {% endif %}
             >9º Ano Ensino Fundamental
             </option>
 
             <option
             value="1m"
-            {% if student.education == "1m" %} selected {% endif %}
+            {% if student.education_level == "1m" %} selected {% endif %}
             >1º Ano Ensino Médio
             </option>
 
             <option
             value="2m"
-            {% if student.education == "2m" %} selected {% endif %}
+            {% if student.education_level == "2m" %} selected {% endif %}
             >2º Ano Ensino Médio
             </option>
 
             <option
             value="3m"
-            {% if student.education == "3m" %} selected {% endif %}
+            {% if student.education_level == "3m" %} selected {% endif %}
             >3º Ano Ensino Médio
             </option>
             
@@ -99,7 +99,7 @@
     <div>Carga horária semanal</div>
     <input 
     type="number" 
-    name="workLoad" 
+    name="workload" 
     placeholder="Insira a quantidade de horas disponíveis na semana"
     >
 </div>
