@@ -22,7 +22,7 @@
     <div>Data de nascimento</div>
     <input 
     type="date" 
-    name="birth"
+    name="birth_date"
     value="{{ teacher.birth }}"
     >
 </div>
@@ -30,7 +30,7 @@
 <div class="item">
     <div>Grau de escolaridade</div>
     <div>
-        <select name="education" form="teachers" required>
+        <select name="education_level" form="teachers" required>
             <option value="medio"
             {% if teacher.education == "medio" %}
                 selected
@@ -73,7 +73,7 @@
         <span>
             <input 
             type="radio" 
-            name="classType" 
+            name="class_type" 
             value="Local"
             {% if teacher.classType == "Local" %}
                 checked
@@ -84,7 +84,7 @@
         <span>
             <input 
             type="radio" 
-            name="classType" 
+            name="class_type" 
             value="Distance"
             {% if teacher.classType == "Distance" %}
                 checked
@@ -100,7 +100,7 @@
     <div>Área de Atuação</div>
     <input 
     type="text" 
-    name="services" 
+    name="subject_taught" 
     value="{{ teacher.services }}"
     placeholder="Disciplinas separadas por vírgula">
 </div>
