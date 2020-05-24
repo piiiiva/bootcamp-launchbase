@@ -11,10 +11,11 @@
 
     <section class="details">
         <form  id="teachers" method="POST" action="/teachers/{{teacher.id}}?_method=PUT">
-                <h3>Editar Pofessor</h3>
+            <h3>Editar Pofessor</h3>
 
-                {% include 'teachers/_fieldsForm.njk' %}
-
+            {% include 'teachers/_fieldsForm.njk' %}
+            
+            <input type="hidden" name="id" value={{teacher.id}}>
         </form>
 
         <form id="form-delete" action="/teachers?_method=DELETE" method="post">
