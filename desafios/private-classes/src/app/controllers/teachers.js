@@ -1,4 +1,3 @@
-const Intl = require('intl')
 const { age, graduation, date } = require('../../lib/utils')
 const Teacher = require('../models/Teacher')
 
@@ -27,56 +26,29 @@ module.exports = {
 
         Teacher.create(req.body, function(teacher) {
             return res.redirect(`teachers/${teacher.id}`)
-        })
-
-
-    // let { avatar_url, name, birth, education, classType, services } = req.body
-
-    // birth = Date.parse(req.body.birth)
-    // const created_at = Date.now()
-    
-
-    // data.teachers.push({
-    //     id,
-    //     avatar_url,
-    //     name,
-    //     birth,
-    //     education,
-    //     classType,
-    //     services,
-    //     created_at
-    // })
-        
+        })  
     },
     show(req, res) {
-        // const { id } = req.params
+        Teacher.find(req.params.id, function(teacher){
+            if (!teacher) return res.send("Professor não encontrado!") 
 
-        // const foundTeachers = data.teachers.find(function(teacher){
-        //     return teacher.id == id
-        // })
-    
-        // if (!foundTeachers) return res.send("Professor não encontrado!")
-    
-        // const teacher = {
-        //     ...foundTeachers,
-        //     age: age(foundTeachers.birth),
-        //     education: graduation(foundTeachers.education),
-        //     services: foundTeachers.services.toString().split(","),
-        //     created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeachers.created_at),
-        // }
-    
-    
-        // return res.render('teachers/show', { teacher })
-        return
+            teacher.age = age(teacher.birth_date)
+            teacher.education_level = graduation(teacher.education_level)
+            teacher.subject_taught = teacher.subject_taught.split(",")
+            teacher.created_at = date(teacher.created_at).format
+        
+            return res.render('teachers/show', { teacher })
+        })
     },
     edit(req, res) {
-        // const { id } = req.params
+        Teacher.find(req.params.id, function(teacher){
+            if (!teacher) return res.send("Professor não encontrado!") 
 
-        // const foundTeachers = data.teachers.find(function(teacher){
-        //     return teacher.id == id
-        // })
-    
-        // if (!foundTeachers) return res.send('Professor não encontrado')
+            teacher.birth_date = date(teacher.birth_date).iso
+           
+        
+            return res.render('teachers/edit', { teacher })
+        })
     
         // const teacher = {
         //     ...foundTeachers,
@@ -85,7 +57,6 @@ module.exports = {
     
     
         // return res.render('teachers/edit', { teacher })
-        return
     },
     update(req, res) {
         // const id = req.params.id

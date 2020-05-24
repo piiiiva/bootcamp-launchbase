@@ -23,7 +23,7 @@
     <input 
     type="date" 
     name="birth_date"
-    value="{{ teacher.birth }}"
+    value="{{ teacher.birth_date }}"
     >
 </div>
 
@@ -32,32 +32,32 @@
     <div>
         <select name="education_level" form="teachers" required>
             <option value="medio"
-            {% if teacher.education == "medio" %}
+            {% if teacher.education_level == "medio" %}
                 selected
             {% endif %}
             >Ensino Médio</option>
             <option value="tecnico"
-            {% if teacher.education == "tecnico" %}
+            {% if teacher.education_level == "tecnico" %}
                 selected
             {% endif %}
             >Curso Técnico</option>
             <option value="bacharelado"
-            {% if teacher.education == "bacharelado" %}
+            {% if teacher.education_level == "bacharelado" %}
                 selected
             {% endif %}
             >Graduação</option>
             <option value="especializacao"
-            {% if teacher.education == "especializacao" %}
+            {% if teacher.education_level == "especializacao" %}
                 selected
             {% endif %}
             >Especialização</option>
             <option value="mestrado"
-            {% if teacher.education == "mestrado" %}
+            {% if teacher.education_level == "mestrado" %}
                 selected
             {% endif %}
             >Mestrado</option>
             <option value="doutorado"
-            {% if teacher.education == "doutorado" %}
+            {% if teacher.education_level == "doutorado" %}
                 selected
             {% endif %}
             >Doutorado</option>
@@ -75,7 +75,7 @@
             type="radio" 
             name="class_type" 
             value="Local"
-            {% if teacher.classType == "Local" %}
+            {% if teacher.class_type == "Local" %}
                 checked
             {% endif %}
             > Presencial         
@@ -86,7 +86,7 @@
             type="radio" 
             name="class_type" 
             value="Distance"
-            {% if teacher.classType == "Distance" %}
+            {% if teacher.class_type == "Distance" %}
                 checked
             {% endif %}
             >À distância         
@@ -101,7 +101,7 @@
     <input 
     type="text" 
     name="subject_taught" 
-    value="{{ teacher.services }}"
+    value="{{ teacher.subject_taught }}"
     placeholder="Disciplinas separadas por vírgula">
 </div>
 
