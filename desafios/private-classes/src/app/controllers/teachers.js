@@ -4,11 +4,10 @@ const Teacher = require('../models/Teacher')
 module.exports = {
     index(req, res) {
         Teacher.all(function(teachers) {
-
-        for (const teacher of teachers) {
-            const subject_taught = teacher.subject_taught.toString().split(",")
-            teacher.subject_taught = subject_taught
-        }
+            for (const teacher of teachers) {
+                const subject_taught = teacher.subject_taught.toString().split(",")
+                teacher.subject_taught = subject_taught
+            }
 
             return res.render('teachers/index', { teachers })   
         })
