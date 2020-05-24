@@ -2,8 +2,18 @@ const { age, graduation, date } = require('../../lib/utils')
 const db = require('../../config/db')
 
 module.exports = {
-    all(calback) {
+    all(callback) {
+        db.query(`
+            SELECT *
+            FROM teachers
+            ORDER BY name ASC
+        `,
+        function(err, results) {
+            if(err) throw `Database Error! ${err}`
 
+            callback(results.rows)
+        }
+        )
     },
     create(data, callback) {
         const query = `

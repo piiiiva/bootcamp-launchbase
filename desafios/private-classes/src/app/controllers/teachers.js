@@ -4,14 +4,15 @@ const Teacher = require('../models/Teacher')
 
 module.exports = {
     index(req, res) {
-        // const listedTeachers
+        Teacher.all(function(teachers) {
 
-        // for (const teacher of listedTeachers) {
-        //     const services = teacher.services.toString().split(",")
-        //     teacher.services = services
-        // }
-     
-        return res.render('teachers/index')
+        for (const teacher of teachers) {
+            const subject_taught = teacher.subject_taught.toString().split(",")
+            teacher.subject_taught = subject_taught
+        }
+
+            return res.render('teachers/index', { teachers })   
+        })
     },
     create(req, res) {
         return res.render('teachers/create')
