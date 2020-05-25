@@ -5,11 +5,12 @@ module.exports = {
     index(req, res){
         Member.all(function(members){
             return res.render('members/index', { members })
-
         })
     },  
     create(req, res){
-        return res.render('members/create')
+        Member.instructorSelectOptions(function(options) {
+            return res.render('members/create', { instructorOptions: options })
+        })
     },
     post(req, res){
             //["avatar_url","name","birth","gender","services"]
@@ -42,7 +43,9 @@ module.exports = {
 
             member.birth = date(member.birth).iso
 
-            return res.render("members/edit", { member })
+            Member.instructorSelectOptions(function(options) {
+                return res.render('members/edit', { member, instructorOptions: options })
+            })
         })
     },
     put(req, res){
