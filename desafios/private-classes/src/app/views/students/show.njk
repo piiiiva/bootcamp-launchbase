@@ -35,6 +35,11 @@
             <div>{{student.workload}}</div>          
         </div>
 
+        <div class="item">
+            <div>Professor</div>
+            <div>{{student.teacher_name}}</div>          
+        </div>
+
         <input type="hidden" name="id" value={{student.id}}>
 
         <a href="{{student.id}}/edit" class="button" id="toStudentEdit">Editar</a>
