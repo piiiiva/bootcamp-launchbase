@@ -203,7 +203,7 @@ input::placeholder {
 form button[type="submit"],
 .table-container > a {
     width: 100%;
-    padding: 16px 32px;
+    padding: 8px 16px;
     background-color: var(--color-background-first);
     color: white;
     border-radius: 4px;
@@ -213,13 +213,22 @@ form button[type="submit"],
     font-weight: 700;
 }
 
+.button {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    float: right;
+    justify-content: center;
+}
+
 .table-container > a {
     display: inline-block;
     width: auto;
     padding: 8px 16px;
     text-decoration: none;
     margin-bottom: 16px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 select {
@@ -228,15 +237,7 @@ select {
     font-weight: 700;
 }
 
-.button {
-    width: 20%;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 14px;
-    display: flex;
-    float: right;
-    justify-content: center;
-}
+
 
 #form-delete button[type="submit"] {
     background: rgba(255, 99, 71, 0.835);
@@ -307,4 +308,39 @@ tbody tr td:last-child a {
 .table-container table tbody tr td:last-child,
 .table-container table thead tr th:last-child {
     text-align: center;
+}
+
+/* === Filter === */
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.table-container .header a {
+    margin: 0;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 8px;
+}
+
+.table-container .header .button,
+.table-container .header .button[type="submit"] {
+    align-items: center;
+    width: 120px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.table-container .header form input {
+    border: 1px solid var(--color-tittle-secondary);
+    padding: 4px 8px;
 }

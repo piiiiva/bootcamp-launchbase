@@ -77,8 +77,8 @@ module.exports = {
             date(data.birth_date).iso,
             data.education_level,
             data.workload,
-            data.id,
-            data.teacher
+            data.teacher,
+            data.id
         ]
 
         db.query(query, values, function(err, results) {
