@@ -59,6 +59,21 @@ module.exports = {
         }
         )
     },
+    findBy(filter, callback){
+        db.query(`
+        SELECT teachers.*, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (students.teacher_id = teachers.id)
+        WHERE teachers.name iLIKE '%${filter}%'
+        OR teachers.subject_taught iLIKE '%${filter}%'
+        GROUP BY teachers.id
+        ORDER BY total_students DESC`
+        , function(err, results) {
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        } )
+    },
     update(data, callback) {
         const query = `
             UPDATE teachers SET
