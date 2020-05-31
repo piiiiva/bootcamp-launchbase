@@ -96,5 +96,42 @@ module.exports = {
             
             return callback()
         })
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM instructors
+            ) AS total` // SubQuery
+        
+// Criar uma condição para quando houver filer, tirando essa
+// responsabilidade do controller
+        if ( filter ) {
+            filterQuery = `${query}
+            WHERE instructors.name iLIKE '%${filter}%'
+            OR instructors.services iLIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM instructors
+                ${filterQuery}
+            ) AS total`
+        }
+
+        query = `
+        SELECT instructors.*, ${totalQuery} , count(members) AS total_students 
+        FROM instructors
+        LEFT JOIN members ON (instructors.id = members.instructor_id)
+        ${filterQuery}
+        GROUP BY instructors.id LIMIT $1 OFFSET $2
+        `
+// [limit e offset são so values $1 e $2]        
+        db.query(query, [limit, offset], function(err, results) {
+            if (err) throw `Database Error ${err}`
+
+            callback(results.rows)
+        })
     }
 }
