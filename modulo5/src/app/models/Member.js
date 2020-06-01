@@ -114,7 +114,7 @@ module.exports = {
 // Criar uma condição para quando houver filer, tirando essa
 // responsabilidade do controller
         if ( filter ) {
-            filterQuery = `${query}
+            filterQuery = `
             WHERE members.name iLIKE '%${filter}%'
             OR members.email iLIKE '%${filter}%'
             `

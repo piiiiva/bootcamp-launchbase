@@ -104,12 +104,12 @@ module.exports = {
             filterQuery = "",
             totalQuery = `(
                 SELECT count(*) FROM instructors
-            ) AS total` // SubQuery
+            ) AS total`
         
 // Criar uma condição para quando houver filer, tirando essa
 // responsabilidade do controller
         if ( filter ) {
-            filterQuery = `${query}
+            filterQuery = `
             WHERE instructors.name iLIKE '%${filter}%'
             OR instructors.services iLIKE '%${filter}%'
             `
