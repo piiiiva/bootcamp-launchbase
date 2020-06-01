@@ -101,5 +101,41 @@ module.exports = {
 
             callback(results.rows)
         })
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM members
+            ) AS total` // SubQuery
+        
+// Criar uma condição para quando houver filer, tirando essa
+// responsabilidade do controller
+        if ( filter ) {
+            filterQuery = `${query}
+            WHERE members.name iLIKE '%${filter}%'
+            OR members.email iLIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM members
+                ${filterQuery}
+            ) AS total`
+        }
+
+        query = `
+        SELECT members.*, ${totalQuery}
+        FROM members
+        ${filterQuery}
+        LIMIT $1 OFFSET $2
+        `
+// [limit e offset são so values $1 e $2]        
+        db.query(query, [limit, offset], function(err, results) {
+            if (err) throw `Database Error ${err}`
+
+            callback(results.rows)
+        })
     }
 }
