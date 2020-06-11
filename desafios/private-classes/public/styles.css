@@ -270,12 +270,16 @@ td, th {
     border-bottom: 1px solid  rgba(83, 123, 253, 0.2);
 }
 
+.table-container td div {
+    height: 100%;
+}
+
 
 tbody tr:last-child td{
     border-bottom: none;
 }
 
-tbody tr td:first-child {
+tbody tr td:first-child div {
     display: grid;
     grid-template-columns: 56px 1fr;
     align-items: center;

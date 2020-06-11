@@ -31,19 +31,29 @@
             {% for student in students %}
             <tr>
                 <td>
-                    <span style="background-image: url({{student.avatar_url}})"></span>
-                    {{student.name}}
+                    <div>
+                        <span style="background-image: url({{student.avatar_url}})"></span>
+                        {{student.name}}
+                    </div>
                 </td>
                     
                 <td>
-                    {{student.email}}
+                    <div>
+                        {{student.email}}
+                    </div>
                 </td>
 
                 <td>
-                    {{student.education_level}}
+                    <div>
+                        {{student.education_level}}
+                    </div>
                 </td>
 
-                <td><a href="/students/{{student.id}}">Ver</a></td>
+                <td>
+                    <div>
+                        <a href="/students/{{student.id}}">Ver</a>
+                    </div>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

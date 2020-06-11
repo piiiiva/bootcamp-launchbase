@@ -29,16 +29,29 @@
             {% for teacher in teachers %}
             <tr>
                 <td>
-                    <span style="background-image: url({{teacher.avatar_url}})"></span>
-                    {{teacher.name}}</td>
+                    <div>
+                        <span style="background-image: url({{teacher.avatar_url}})"></span>
+                        {{teacher.name}}
+                    </div>
+                </td>
                     
                 <td>
-                    {% for subject_taught in teacher.subject_taught %}
-                        <span>{{subject_taught}}</span>
-                    {% endfor %}
+                    <div>
+                        {% for subject_taught in teacher.subject_taught %}
+                            <span>{{subject_taught}}</span>
+                        {% endfor %}
+                    </div>
                 </td>
-                <td>{{ teacher.total_students }}</td>
-                <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+                <td>
+                    <div>
+                        {{ teacher.total_students }}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a href="/teachers/{{teacher.id}}">Ver</a>
+                    </div>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

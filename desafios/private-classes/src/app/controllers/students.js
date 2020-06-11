@@ -15,17 +15,25 @@ module.exports = {
             limit,
             offset,
             callback(students) {
-                const pagination = {
-                    total: Math.ceil(Number(students[0].total / limit)),
-                    page 
-                }
+                if (students && students.length > 0) {
+                   
+                    const pagination = {
+                        total: Math.ceil(Number(students[0].total / limit)),
+                        page 
+                    }
+    
+    
+                    for (const student of students) {
+                        const education_level = grade(student.education_level)
+                        student.education_level = education_level
+                    }
+                   
+                    return res.render('students/index', { students, pagination, filter })
+                } else {
 
-                for (const student of students) {
-                    const education_level = grade(student.education_level)
-                    student.education_level = education_level
-                }
-               
-                return res.render('students/index', { students, pagination, filter })
+                    console.log('entrou no if')
+                    return res.render('students/index')
+                }              
             }
         }
 
