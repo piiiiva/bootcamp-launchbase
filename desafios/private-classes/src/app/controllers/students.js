@@ -3,13 +3,14 @@ const Student = require('../models/Student')
 
 module.exports = {
     index(req, res) {
-        let { page, limit } = req.query
+        let { filter, page, limit } = req.query
 
         page = page || 1
         limit = limit || 3
         let offset = limit * (page - 1)
 
         const params = {
+            filter,
             page,
             limit,
             offset,
@@ -24,7 +25,7 @@ module.exports = {
                     student.education_level = education_level
                 }
                
-                return res.render('students/index', { students, pagination })
+                return res.render('students/index', { students, pagination, filter })
             }
         }
 

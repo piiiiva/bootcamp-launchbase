@@ -108,13 +108,26 @@ module.exports = {
         const { filter, limit, offset, callback } = params
         
         let query = ``,
+            filterQuery = ``,
             totalQuery = `(
                 SELECT count(*) FROM students
             ) AS total`
 
+        if (filter) {
+            filterQuery = `
+                WHERE students.name iLIKE '%${filter}%'
+                OR students.education_level iLIKE '%${filter}%'
+            `
+            totalQuery = `(
+                SELECT count(*) FROM students
+                ${filterQuery}
+            ) AS total`
+        }
+
         query = `
             SELECT students.*, ${totalQuery}
             FROM students
+            ${filterQuery}
             ORDER BY students.name ASC
             LIMIT $1 OFFSET $2
         `
