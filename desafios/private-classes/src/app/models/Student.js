@@ -103,6 +103,27 @@ module.exports = {
 
             callback(results.rows)
         })
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+        
+        let query = ``,
+            totalQuery = `(
+                SELECT count(*) FROM students
+            ) AS total`
+
+        query = `
+            SELECT students.*, ${totalQuery}
+            FROM students
+            ORDER BY students.name ASC
+            LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function(err, results) {
+            if (err) throw `Database Error ${err}`
+
+            callback(results.rows)
+        })
     }
 
 
