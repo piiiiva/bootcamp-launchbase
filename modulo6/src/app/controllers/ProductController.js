@@ -27,11 +27,9 @@ module.exports = {
 
     let results = await Product.create(req.body)
     const productId = results.rows[0].id
-    console.log(`Primeiro results ${results}`)
 
     results = await Category.all()
     const categories = results.rows
-    console.log(`Segundo results ${results}`)
 
     return res.render('products/create.njk', { productId, categories })
 

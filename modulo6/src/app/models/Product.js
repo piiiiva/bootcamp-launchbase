@@ -15,16 +15,19 @@ module.exports = {
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
       RETURNING id
     `
+    // entra R$ 1,23
+    data.price = data.price.replace(/\D/g, "") // pega tudo o que não é Dígito e troca por vazio
+    // Guardamos no banco 123. Depois quando pegarmos esse dado do banco basta dividir por 100
 
     const values = [
       data.category_id,
-      16,
+      data.user_id || 1,
       data.name,
       data.description,
-      data.old_price,
+      data.old_price || data.price,
       data.price,
       data.quantity,
-      data.status
+      data.status || 1,
     ]
 
     return db.query(query, values)
