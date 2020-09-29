@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #fd951f;
-  --secondary-color: #1fc9fd;
+  --secondary-color: #1f40fd;
   
 }
 
@@ -59,6 +59,22 @@ body {
   background-color: #e28113;
 }
 
+.button.edit {
+  background-color: var(--secondary-color);
+}
+
+.button.delete {
+  background-color: lightgray;
+}
+
+.button.edit:hover {
+  background-color: #042592;
+}
+
+.button.delete:hover {
+  background-color: #f65c5c;
+}
+
 /* HEADER */
 
 header, footer {
@@ -73,7 +89,7 @@ header, footer {
 
 header div.container {
   display: grid;
-  grid-template-columns: 220px auto 280px;
+  grid-template-columns: 220px auto 280px; /* Poderia ser 1fr no lugar do auto */
   align-items: center;
   grid-gap: 24px;
 }
@@ -157,6 +173,10 @@ section.form .header h3 {
   margin-bottom: 16px;
 }
 
+form .fields {
+  margin-bottom: 64px;
+}
+
 form .item {
   margin-bottom: 16px;
 }
@@ -203,7 +223,14 @@ form .item select {
 form .item textarea {
   min-height: 150px;
 }
-
-form .fields {
-  margin-bottom: 64px;
+form .item span {
+  padding: 8px 16px; /* Procurar usar sempre multiplos de 8 - Google utiliza assim */
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  color: white;
+  margin-right: 4px;
+  margin-top: 8px;
+  display: inline-block; /* Por padrão o span é display inline. Queremos que ele fique lado a lado mas com propriedades de block */
+  font-weight: 700;
+  font-size: 12px;
 }
