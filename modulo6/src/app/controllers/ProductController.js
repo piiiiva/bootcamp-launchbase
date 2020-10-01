@@ -1,5 +1,4 @@
 const { formatPrice } = require('../../lib/utils')
-const { put } = require('../../routes')
 const Category = require('../models/Category')
 const Product = require('../models/Product')
 
@@ -26,6 +25,8 @@ module.exports = {
         return res.send('Por favor, preencha todos os campos.')
       }
     }
+
+    //req.body.price = req.body.price.replace(/\D/g, "") // onde não for dígito troca por vazio
 
     let results = await Product.create(req.body)
     const productId = results.rows[0].id
@@ -67,8 +68,11 @@ module.exports = {
     await Product.update(req.body)
 
     return res.redirect(`/products/${req.body.id}/edit`)
-
-
-
   },
+
+  async delete(req, res) {
+    await Product.delete(req.body.id)
+
+    return res.redirect('products/create')
+  }
 }
