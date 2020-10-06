@@ -12,6 +12,10 @@
     border: 0;
 }
 
+html, body {
+    min-height: 100vh;
+}
+
 body {
     background-color: #282a36;
     font-family: 'Source Sans Pro', sans-serif ;
@@ -246,6 +250,24 @@ a {
     font-size: 14px;
     line-height: 24px;
     padding-top: 5px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 32px 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
+
+footer p span {
+    color: #537bfd;
 }
 
 

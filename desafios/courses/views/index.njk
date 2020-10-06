@@ -4,30 +4,23 @@
     <title>Cursos Rocketseat</title>
 {% endblock head %}
 
-
-
 {%block content%}
-
-<div id="wrapper">
+    <div id="wrapper">
         <h1>Cursos Disponíveis</h1>
     </div>
 
     <section class="cards-contentPage">
-
         {% for course in courses %}
-                <div class="card-contentPage" id="{{course.id}}">
+            <div class="card-contentPage" id="{{course.id}}">
                 <div class="card__image-contentPage">
                     <img src="{{course.image}}" alt="">
                 </div>
                 <div class="card__contentPage__info">
-                    <p>Módulos: {{course.modules}}</p>
+                    <p>Módulos:
+                        {{course.modules}}</p>
                     <p class="card__contentPage__price">{{course.price}}</p>
                 </div>
-
-                </div>
-                
+            </div>
         {% endfor %}
     </section>
-
 {%endblock%}
-    
